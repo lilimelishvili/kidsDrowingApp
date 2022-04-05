@@ -3,10 +3,11 @@ package com.example.kidsdrowingapp
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
 
-class DrowingView(context: Context, attrs: AttributeSet) : View(context, attrs) {
+class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
 
 
@@ -93,6 +94,12 @@ class DrowingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
 
 
         return true
+    }
+
+    fun setSizeForBrush(newSize : Float){
+        mBrushSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                newSize, resources.displayMetrics)
+        mDrawPaint!!.strokeWidth = mBrushSize
     }
     internal inner class CustomPath (var color: Int, var brushThickness: Float) : Path() {
 
