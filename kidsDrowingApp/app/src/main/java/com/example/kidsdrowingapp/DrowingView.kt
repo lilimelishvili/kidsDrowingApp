@@ -29,7 +29,7 @@ class DrowingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         mDrawPaint!!.strokeJoin = Paint.Join.ROUND
         mDrawPaint!!.strokeCap = Paint.Cap.ROUND
         mCanvasPaint = Paint(Paint.DITHER_FLAG)
-        mBrushSize  = 20.toFloat()
+        mBrushSize  = 20.toFloat() //Setting Up The Kids Drawing App - Drawing View Part 1
     }
 
     internal inner class CustomPath (var color: Int, var brushThickness: Float) : Path() {
